@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+
+  proxy:
+    build:
+      dockerfile: Dockerfile
+      context: ./proxy
+    ports:
+      - 81:80
+    depends_on:
+      - api
+      - react-app
+
+  react-app:
+    build:
+      dockerfile: Dockerfile
+      context: ./sys-stats
