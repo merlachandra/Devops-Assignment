@@ -1,6 +1,5 @@
 # node_modules which are installed as part of npm install
 node_modules
 build
-package-lock.json
 *.md
 .gitignore
