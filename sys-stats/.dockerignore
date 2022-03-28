@@ -1,0 +1,5 @@
+# node_modules which are installed as part of npm install
+node_modules
+build
+*.md
+.gitignore

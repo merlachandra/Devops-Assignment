@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    image: merlachandra/devops-assignment_api
+
+  proxy:
+    build:
+      dockerfile: Dockerfile
+      context: ./proxy
+    image: merlachandra/devops-assignment_proxy
+    ports:
+      # As 80 is already in use my windows system by IIS
+      - 30100:80
+    depends_on:
+      - api
+      - react-app
+
+  react-app:
+    build:
+      dockerfile: Dockerfile
+      context: ./sys-stats
+    image: merlachandra/devops-assignment_react-app
