@@ -11,6 +11,7 @@ services:
       context: ./proxy
     image: merlachandra/devops-assignment_proxy
     ports:
+      # As 80 is already in use my windows system by IIS
       - 30100:80
     depends_on:
       - api
