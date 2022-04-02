@@ -3,7 +3,6 @@ on: [push]
 jobs:
   build-api-docker-image:
     runs-on: docker
-    when: api dir changes
     steps:
       - uses: actions/checkoutv3
       - uses: actions/setup-docker@v3
